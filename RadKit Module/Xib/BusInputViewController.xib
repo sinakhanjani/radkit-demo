@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans_Bold.ttf">
+            <string>IRANSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BusInputViewController" customModule="Radkit" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="7kF-Kg-ATH" id="2aP-6Y-PV8"/>
+                <outlet property="channelPickerView" destination="lvW-ex-HoE" id="WcB-ag-sZX"/>
+                <outlet property="deviceButton" destination="6Ja-Fb-Lps" id="rxr-2p-lcw"/>
+                <outlet property="typePickerView" destination="kyu-4q-gov" id="K7Y-Ux-YEi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kF-Kg-ATH">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOO-Rv-rEu" customClass="RoundedView" customModule="Radkit" customModuleProvider="target">
+                    <rect key="frame" x="16" y="278" width="382" height="340"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swh-Oc-pJS">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select input" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5A-sl-u1p">
+                                    <rect key="frame" x="144.5" y="12" width="93.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="2eb-Xo-MJn"/>
+                                <constraint firstItem="l5A-sl-u1p" firstAttribute="centerY" secondItem="swh-Oc-pJS" secondAttribute="centerY" id="9bk-V4-9NK"/>
+                                <constraint firstItem="l5A-sl-u1p" firstAttribute="centerX" secondItem="swh-Oc-pJS" secondAttribute="centerX" id="szW-k0-3AS"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="514-I5-d84">
+                            <rect key="frame" x="8" y="288" width="366" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-Ti-Da6" customClass="RoundedButton" customModule="Radkit" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="44"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="14"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" red="0.84479236599999996" green="0.17948806289999999" blue="0.37647125120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="sQx-px-DHc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojd-a6-2iI" customClass="RoundedButton" customModule="Radkit" customModuleProvider="target">
+                                    <rect key="frame" x="191" y="0.0" width="175" height="44"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="14"/>
+                                    <state key="normal" title="Done">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="agreeButtonTapped:" destination="-1" eventType="touchUpInside" id="Zk6-Ew-G7B"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="gx6-4b-fPZ"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="La5-dO-5td">
+                            <rect key="frame" x="16" y="92" width="350" height="180"/>
+                            <subviews>
+                                <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvW-ex-HoE">
+                                    <rect key="frame" x="0.0" y="0.0" width="171" height="180"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="FTI-cE-N7N"/>
+                                        <outlet property="delegate" destination="-1" id="dbY-uo-dOV"/>
+                                    </connections>
+                                </pickerView>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyu-4q-gov">
+                                    <rect key="frame" x="179" y="0.0" width="171" height="180"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="kuo-6o-rab"/>
+                                        <outlet property="delegate" destination="-1" id="A6t-59-Wmm"/>
+                                    </connections>
+                                </pickerView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="180" id="ioZ-9P-yPF"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ja-Fb-Lps" customClass="RoundedButton" customModule="Radkit" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
+                            <rect key="frame" x="16" y="60" width="350" height="40"/>
+                            <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="sLM-8Q-oyi"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                            <state key="normal" title="Select The Device">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" systemColor="separatorColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDeviceButtonTapped:" destination="-1" eventType="touchUpInside" id="KlR-Lq-etA"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vpc-Wa-sOI">
+                            <rect key="frame" x="30" y="74" width="18" height="12.5"/>
+                            <color key="tintColor" name="RADGreen"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="18" id="Abg-AX-eYw"/>
+                                <constraint firstAttribute="height" constant="18" id="V90-4N-d7i"/>
+                            </constraints>
+                            <imageReference key="image" image="chevron.down" catalog="system" symbolScale="large"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="514-I5-d84" secondAttribute="bottom" constant="8" id="5Pk-bY-F5O"/>
+                        <constraint firstItem="514-I5-d84" firstAttribute="top" secondItem="La5-dO-5td" secondAttribute="bottom" constant="16" id="8nD-N9-cde"/>
+                        <constraint firstItem="La5-dO-5td" firstAttribute="leading" secondItem="TOO-Rv-rEu" secondAttribute="leading" constant="16" id="BJI-Qr-gdR"/>
+                        <constraint firstAttribute="trailing" secondItem="La5-dO-5td" secondAttribute="trailing" constant="16" id="ER0-m2-QmY"/>
+                        <constraint firstItem="vpc-Wa-sOI" firstAttribute="centerY" secondItem="6Ja-Fb-Lps" secondAttribute="centerY" id="FK6-Pw-gVR"/>
+                        <constraint firstItem="514-I5-d84" firstAttribute="leading" secondItem="TOO-Rv-rEu" secondAttribute="leading" constant="8" id="GR7-QF-RkV"/>
+                        <constraint firstItem="swh-Oc-pJS" firstAttribute="leading" secondItem="TOO-Rv-rEu" secondAttribute="leading" id="QRN-WC-GvX"/>
+                        <constraint firstItem="6Ja-Fb-Lps" firstAttribute="leading" secondItem="TOO-Rv-rEu" secondAttribute="leading" constant="16" id="Qwr-Og-SJK"/>
+                        <constraint firstItem="6Ja-Fb-Lps" firstAttribute="leading" secondItem="vpc-Wa-sOI" secondAttribute="trailing" constant="-32" id="XTK-hT-lhB"/>
+                        <constraint firstItem="6Ja-Fb-Lps" firstAttribute="top" secondItem="swh-Oc-pJS" secondAttribute="bottom" constant="16" id="a8E-mH-x5T"/>
+                        <constraint firstItem="swh-Oc-pJS" firstAttribute="top" secondItem="TOO-Rv-rEu" secondAttribute="top" id="aSy-no-2ON"/>
+                        <constraint firstAttribute="height" constant="340" id="d7k-eP-NAg"/>
+                        <constraint firstAttribute="trailing" secondItem="514-I5-d84" secondAttribute="trailing" constant="8" id="ifi-j7-Ye7"/>
+                        <constraint firstAttribute="trailing" secondItem="swh-Oc-pJS" secondAttribute="trailing" id="oJj-g6-XHV"/>
+                        <constraint firstAttribute="trailing" secondItem="6Ja-Fb-Lps" secondAttribute="trailing" constant="16" id="os6-o1-0Vd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="TOO-Rv-rEu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3EA-Ow-dom"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TOO-Rv-rEu" secondAttribute="trailing" constant="16" id="ChI-E6-qpp"/>
+                <constraint firstItem="7kF-Kg-ATH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DaB-zj-uv1"/>
+                <constraint firstAttribute="bottom" secondItem="7kF-Kg-ATH" secondAttribute="bottom" id="EyF-yP-YXB"/>
+                <constraint firstItem="7kF-Kg-ATH" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="S6h-uA-dof"/>
+                <constraint firstItem="TOO-Rv-rEu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XYt-wH-IR5"/>
+                <constraint firstItem="7kF-Kg-ATH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i8m-fw-faz"/>
+                <constraint firstItem="TOO-Rv-rEu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yay-bc-DlC"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <namedColor name="RADGreen">
+            <color red="0.26600000262260437" green="0.57700002193450928" blue="0.51800000667572021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

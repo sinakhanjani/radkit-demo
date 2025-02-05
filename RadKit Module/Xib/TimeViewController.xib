@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans_Bold.ttf">
+            <string>IRANSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeViewController" customModule="Radkit" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="byi-sW-fRJ" id="t7C-qM-3up"/>
+                <outlet property="pickerView" destination="D8Q-dr-MNQ" id="XUe-TS-rG1"/>
+                <outlet property="titleLabel" destination="M33-MF-U4T" id="pCH-LZ-bPx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byi-sW-fRJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMF-Ks-c8Q" customClass="RoundedView" customModule="Radkit" customModuleProvider="target">
+                    <rect key="frame" x="97" y="318" width="220" height="260"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-oc-sQa">
+                            <rect key="frame" x="0.0" y="0.0" width="220" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time selection" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M33-MF-U4T">
+                                    <rect key="frame" x="53" y="12" width="114" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="M33-MF-U4T" firstAttribute="centerX" secondItem="DUQ-oc-sQa" secondAttribute="centerX" id="5eQ-qX-6a8"/>
+                                <constraint firstAttribute="height" constant="44" id="FrD-eC-Qah"/>
+                                <constraint firstItem="M33-MF-U4T" firstAttribute="centerY" secondItem="DUQ-oc-sQa" secondAttribute="centerY" id="QgG-Xm-s89"/>
+                            </constraints>
+                        </view>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8Q-dr-MNQ">
+                            <rect key="frame" x="53.5" y="52" width="113" height="148"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="148" id="dKu-qZ-XSm"/>
+                                <constraint firstAttribute="width" constant="113" id="pk5-sE-4Ar"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="ZAs-Sr-6lL"/>
+                                <outlet property="delegate" destination="-1" id="Ojh-ia-uYb"/>
+                            </connections>
+                        </pickerView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yMt-mJ-2DD">
+                            <rect key="frame" x="8" y="218" width="204" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcG-EW-8Kc" customClass="RoundedButton" customModule="Radkit" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="94" height="34"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="14"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="hWK-cz-NWF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-wu-O1Y" customClass="RoundedButton" customModule="Radkit" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="94" height="34"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="14"/>
+                                    <state key="normal" title="Done">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="agreeButtonTapped:" destination="-1" eventType="touchUpInside" id="qw2-vI-5QK"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yMt-mJ-2DD" secondAttribute="trailing" constant="8" id="2Kr-jZ-zTL"/>
+                        <constraint firstAttribute="bottom" secondItem="yMt-mJ-2DD" secondAttribute="bottom" constant="8" id="3sb-xn-Bgq"/>
+                        <constraint firstItem="DUQ-oc-sQa" firstAttribute="leading" secondItem="XMF-Ks-c8Q" secondAttribute="leading" id="6FR-Zk-HXQ"/>
+                        <constraint firstItem="DUQ-oc-sQa" firstAttribute="top" secondItem="XMF-Ks-c8Q" secondAttribute="top" id="6qf-3a-rqc"/>
+                        <constraint firstAttribute="width" constant="220" id="7bR-se-ghg"/>
+                        <constraint firstAttribute="height" constant="260" id="GpY-TZ-sdZ"/>
+                        <constraint firstAttribute="trailing" secondItem="DUQ-oc-sQa" secondAttribute="trailing" id="QL7-zl-2Ge"/>
+                        <constraint firstItem="D8Q-dr-MNQ" firstAttribute="centerX" secondItem="XMF-Ks-c8Q" secondAttribute="centerX" id="jsj-2B-ae6"/>
+                        <constraint firstItem="D8Q-dr-MNQ" firstAttribute="top" secondItem="DUQ-oc-sQa" secondAttribute="bottom" constant="8" id="rUo-o4-KAJ"/>
+                        <constraint firstItem="yMt-mJ-2DD" firstAttribute="leading" secondItem="XMF-Ks-c8Q" secondAttribute="leading" constant="8" id="x0w-n9-BPY"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="byi-sW-fRJ" secondAttribute="bottom" id="4Yd-gL-yJO"/>
+                <constraint firstItem="XMF-Ks-c8Q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KZR-8v-yAK"/>
+                <constraint firstItem="byi-sW-fRJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="S5h-Ob-4Rl"/>
+                <constraint firstItem="byi-sW-fRJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="XK5-G0-4jx"/>
+                <constraint firstItem="XMF-Ks-c8Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cTu-8C-fB4"/>
+                <constraint firstItem="byi-sW-fRJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uww-Ux-8a5"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

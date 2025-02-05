@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "sc_sw.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

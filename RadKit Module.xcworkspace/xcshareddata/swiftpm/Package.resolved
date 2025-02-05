@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "progresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/relatedcode/ProgressHUD",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3ae24c855fff8fd40924a121ab315c125720d917"
+      }
+    },
+    {
+      "identity" : "tocropviewcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimOliver/TOCropViewController.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a942414508012b13102f776eb65dac655f31cabb"
+      }
+    }
+  ],
+  "version" : 2
+}

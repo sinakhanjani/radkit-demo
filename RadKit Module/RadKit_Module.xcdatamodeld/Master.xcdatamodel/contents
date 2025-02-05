@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Command" representedClassName="Command" syncable="YES">
+        <attribute name="deviceName" optional="YES" attributeType="String"/>
+        <attribute name="deviceSerial" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deviceType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sendData" optional="YES" attributeType="Binary"/>
+        <attribute name="time" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES"/>
+        <relationship name="senario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Senario" inverseName="command" inverseEntity="Senario"/>
+    </entity>
+    <entity name="Device" representedClassName="Device" syncable="YES">
+        <attribute name="bridgeDeviceSerial" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="connectionType" attributeType="String" defaultValueString="none"/>
+        <attribute name="internetToken" optional="YES" attributeType="String"/>
+        <attribute name="ip" optional="YES" attributeType="String"/>
+        <attribute name="isBossDevice" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isLock" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isStatic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="localToken" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="port" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="requestKey" optional="YES" attributeType="Binary"/>
+        <attribute name="serial" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="staticIP" optional="YES" attributeType="String"/>
+        <attribute name="staticPort" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="version" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wifibssid" optional="YES" attributeType="String"/>
+        <relationship name="inputStatus" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="InputStatus" inverseName="relationship" inverseEntity="InputStatus"/>
+        <relationship name="relays" optional="YES" toMany="YES" maxCount="16" deletionRule="Nullify" ordered="YES" destinationEntity="Relay" inverseName="device" inverseEntity="Relay"/>
+    </entity>
+    <entity name="EQDevice" representedClassName="EQDevice" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="serial" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="eqRelays" optional="YES" toMany="YES" maxCount="16" deletionRule="Nullify" ordered="YES" destinationEntity="EQRely" inverseName="eqDevice" inverseEntity="EQRely"/>
+    </entity>
+    <entity name="EQRely" representedClassName="EQRely" syncable="YES">
+        <attribute name="cover" optional="YES" attributeType="Binary"/>
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <attribute name="data2" optional="YES" attributeType="Binary"/>
+        <attribute name="data3" optional="YES" attributeType="Binary"/>
+        <attribute name="data4" optional="YES" attributeType="Binary"/>
+        <attribute name="data5" optional="YES" attributeType="Binary"/>
+        <attribute name="data6" optional="YES" attributeType="Binary"/>
+        <attribute name="digit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isContinual" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="name2" optional="YES" attributeType="String"/>
+        <attribute name="name3" optional="YES" attributeType="String"/>
+        <attribute name="name4" optional="YES" attributeType="String"/>
+        <attribute name="name5" optional="YES" attributeType="String"/>
+        <attribute name="name6" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <relationship name="eqDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EQDevice" inverseName="eqRelays" inverseEntity="EQDevice"/>
+    </entity>
+    <entity name="Equipment" representedClassName="Equipment" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isShortcut" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="senarioId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="eqDevice" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="EQDevice"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="equipments" inverseEntity="Room"/>
+    </entity>
+    <entity name="InputStatus" representedClassName="InputStatus" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="inputStatus" inverseEntity="Device"/>
+    </entity>
+    <entity name="Relay" representedClassName="Relay" syncable="YES">
+        <attribute name="digit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="relays" inverseEntity="Device"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="equipments" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Equipment" inverseName="room" inverseEntity="Equipment"/>
+    </entity>
+    <entity name="Senario" representedClassName="Senario" syncable="YES">
+        <attribute name="cover" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="repeatedTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="command" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Command" inverseName="senario" inverseEntity="Command"/>
+    </entity>
+    <elements>
+        <element name="Command" positionX="-90" positionY="153" width="128" height="119"/>
+        <element name="Device" positionX="-95.76953125" positionY="-9.2265625" width="128" height="359"/>
+        <element name="EQDevice" positionX="-99" positionY="144" width="128" height="103"/>
+        <element name="EQRely" positionX="-72" positionY="180" width="128" height="284"/>
+        <element name="Equipment" positionX="193.0078125" positionY="314.7421875" width="128" height="149"/>
+        <element name="InputStatus" positionX="-99" positionY="153" width="128" height="74"/>
+        <element name="Relay" positionX="-304.109375" positionY="185.7578125" width="128" height="88"/>
+        <element name="Room" positionX="473.7578125" positionY="92.28515625" width="128" height="89"/>
+        <element name="Senario" positionX="-99" positionY="144" width="128" height="104"/>
+    </elements>
+</model>
