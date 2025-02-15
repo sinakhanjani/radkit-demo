@@ -48,8 +48,8 @@ The app includes a **time-based scheduling and scenario** system that enables us
 ## Screenshots 📸
 (Sample app screenshots will be placed here)
 
-1. ![Screenshot 1](/./mnt/1.png)
-2. ![Screenshot 2](./mnt/2.png)
+1. ![Screenshot 1](/./mnt/sc4-01.png)
+2. ![Screenshot 2](./mnt/sc04-2.png)
 
 ---
 
